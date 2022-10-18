@@ -1,19 +1,20 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import TheWelcome from './components/WelcomeMessage.vue'
+import TheSiteList from './components/SiteList.vue'
+import json from '../sites.json'
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <img alt="site logo" class="logo" :src="json.siteLogo" width="150" height="150" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <TheWelcome :msg=json.welcomeMsg :user=json.userName />
     </div>
   </header>
 
   <main>
-    <TheWelcome />
+    <TheSiteList />
   </main>
 </template>
 
